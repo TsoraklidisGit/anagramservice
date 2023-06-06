@@ -1,0 +1,23 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.anagramservice'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.github.tomakehurst:wiremock-standalone:2.27.2'
+	testImplementation 'com.github.tomakehurst:wiremock-jre8:2.27.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
